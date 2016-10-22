@@ -16,6 +16,7 @@ public abstract class BaseActivity<T extends BasePresenter,E extends BaseModel> 
     public E mMoldel;
     public Context context;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onCreate(savedInstanceState);
