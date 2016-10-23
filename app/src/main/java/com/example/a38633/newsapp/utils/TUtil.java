@@ -13,7 +13,8 @@ public class TUtil {
             //type java的所有类型的搞基公共接口，包括原始类型，参数化类型，数组类型，类型变量和基本类型；
             //geta获取参数化类型的数组，泛型可能有多个。
             try {
-                return ((Class<T>)((ParameterizedType)(o.getClass().getGenericSuperclass())).getActualTypeArguments()[i]).newInstance();
+                return ((Class<T>)((ParameterizedType)(o.getClass().getGenericSuperclass()))
+                        .getActualTypeArguments()[i]).newInstance();
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
