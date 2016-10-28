@@ -19,7 +19,8 @@ public interface ApidService {
     @GET("nc/article/{type}/{id}/{startPage}-20.html")
     Observable<Map<String,List<NewsSummary>>> getNewsList(
             @Header("Cache_Control") String cacheControl,
-            @Path("type") String type,@Path("id") String id,
+            @Path("type") String type,
+            @Path("id") String id,
             @Path("starPage") int startPage);
 
 
