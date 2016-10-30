@@ -15,6 +15,9 @@ public class AppContext {
     private AppContext(){
 
     }
+    public static void init(Context context) {
+        mContext = context;
+    }
     public static Context getInstance(){
         if (mContext == null){
             throw new NullPointerException("the context is null");

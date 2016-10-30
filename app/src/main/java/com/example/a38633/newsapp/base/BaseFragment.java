@@ -1,9 +1,10 @@
 package com.example.a38633.newsapp.base;
 
-import android.app.Fragment;
+
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,7 @@ import butterknife.ButterKnife;
  * Created by 38633 on 2016/10/22.
  */
 
-public abstract class BaseFragment<T extends BasePresenter,E extends BaseModel>extends Fragment{
+public abstract class BaseFragment<T extends BasePresenter,E extends BaseModel>extends Fragment {
     protected View mRootView;
     public T mPresenter;
     public E mModel;
@@ -45,4 +46,12 @@ public abstract class BaseFragment<T extends BasePresenter,E extends BaseModel>e
     protected abstract void initPresenter();
     protected abstract void initView();
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        ButterKnife.unbind(this);
+        if (mPresenter!=null)
+            mPresenter.onDestory();
+        mRxMannager.clear();
+    }
 }

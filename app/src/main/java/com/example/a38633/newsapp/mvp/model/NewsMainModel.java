@@ -24,12 +24,16 @@ public class NewsMainModel implements NewsMainContract.Model {
 
             @Override
             public void call(Subscriber<? super List<NewsChannelTable>> subscriber) {
+
+
                 ArrayList<NewsChannelTable> newsChannelTablelist = (ArrayList<NewsChannelTable>) ACache.get(AppContext.getInstance()).getAsObject(AppConstant.CHANNEL_MINE);
+
                 if (newsChannelTablelist == null){
                     newsChannelTablelist = (ArrayList<NewsChannelTable>) NewsChannelTableMannager.loadNewsChannelsStatic();
                     ACache.get(AppContext.getInstance()).put(AppConstant.CHANNEL_MINE,newsChannelTablelist);
 
                 }
+
                 subscriber.onNext(newsChannelTablelist);
                 subscriber.onCompleted();
             }

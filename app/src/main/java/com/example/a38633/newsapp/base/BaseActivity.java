@@ -41,4 +41,12 @@ public abstract class BaseActivity<T extends BasePresenter,E extends BaseModel> 
     protected abstract void initView();
     protected abstract void initPresenter();
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ButterKnife.unbind(this);
+        if (mPresenter != null)
+            mPresenter.onDestory();
+        mRxMannager.clear();
+    }
 }
