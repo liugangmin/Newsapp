@@ -19,7 +19,7 @@ import rx.Subscriber;
 
 public class NewsMainModel implements NewsMainContract.Model {
     @Override
-    public Observable<List<NewsChannelTable>> lodeMineNewsChannels() {
+    public Observable<List<NewsChannelTable>> loadMineNewsChannels() {
         return Observable.create(new Observable.OnSubscribe<List<NewsChannelTable>>(){
 
             @Override

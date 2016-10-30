@@ -6,7 +6,6 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.widget.ImageView;
 
 import com.example.a38633.newsapp.R;
@@ -52,16 +51,15 @@ public class NewsMainFragment extends BaseFragment<NewsMainPresenter,NewsMainMod
     }
 
     @Override
-    protected void initPresenter() {
+    protected void initPresenter() {            ////////
         mPresenter.setVM(this,mModel);
 
     }
 
     @Override
     protected void initView() {
-        Log.d("here", "initView: ");
-        mPresenter.lodeMineNewsChannelsRequest();
-    }
+        mPresenter.loadMineNewsChannelsRequest();
+    }//////
 
     @Override
     public void onDestroy() {
@@ -76,10 +74,8 @@ public class NewsMainFragment extends BaseFragment<NewsMainPresenter,NewsMainMod
             List<Fragment> fragmentList = new ArrayList<>();
             for (NewsChannelTable table:newsChannelsMine){
                 channelNames.add(table.getNewsChannelName());
-//                Log.d("here", "returnMineNewsChannels: " + table.getNewsChannelName());
                 fragmentList.add(createListFragments(table));
             }
-            //Log.d("here", "returnMineNewsChannels: " + channelNames.size());
             mBaseFragmentAdapter = new BaseFragmentAdapter(getChildFragmentManager(),fragmentList,channelNames);
             mViewPager.setAdapter(mBaseFragmentAdapter);
             mTabs.setupWithViewPager(mViewPager);
