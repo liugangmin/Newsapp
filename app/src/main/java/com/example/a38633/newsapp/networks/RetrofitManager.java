@@ -29,7 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitManager {
     public static final int READ_TIME_OUT = 7000;
     public static final int CONNECT_TIME_OUT=7000;
-    ApidService mService;
+    ApiService mService;
     Retrofit retrofit;
     /*************************缓存设置*********************/
 /*
@@ -65,7 +65,7 @@ public class RetrofitManager {
      */
     public static final String CACHE_CONTROL_AGE = "max-age=0";
 
-      private static SparseArray<RetrofitManager>sRetrofitManager = new SparseArray<>(HostType.TYPE_COUNT);
+    private static SparseArray<RetrofitManager>sRetrofitManager = new SparseArray<>(HostType.TYPE_COUNT);
     //构造方法是私有的
     private RetrofitManager(int hostType){
         //获得500M的缓存空间
@@ -101,7 +101,7 @@ public class RetrofitManager {
                 .build();
 
 
-        mService = retrofit.create(ApidService.class);
+        mService = retrofit.create(ApiService.class);
 
 
     }
@@ -111,7 +111,7 @@ public class RetrofitManager {
      * @param
      * @return
      */
-    public static ApidService getDelfult(int hostType){
+    public static ApiService getDelfult(int hostType){
         RetrofitManager retrofitManager = sRetrofitManager.get(hostType);
         if (retrofitManager == null){
             retrofitManager = new RetrofitManager(hostType);

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:andriod="http://schemas.android.com/apk/res/android"
+    andriod:layout_width="match_parent"
+    andriod:layout_height="match_parent">
+    <android.support.v4.widget.SwipeRefreshLayout
+        andriod:layout_width="match_parent"
+        andriod:layout_height="match_parent"
+        andriod:id="@+id/srl">
+        <android.support.v7.widget.RecyclerView
+            andriod:id="@+id/rc"
+            andriod:layout_width="match_parent"
+            andriod:layout_height="match_parent"
+            />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</FrameLayout>

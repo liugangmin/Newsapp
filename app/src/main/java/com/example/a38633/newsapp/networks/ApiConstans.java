@@ -18,12 +18,6 @@ public class ApiConstans {
     public static final String HOUSE_TYPE = "house";
     // 其他TYPE
     public static final String OTHER_TYPE = "list";
-
-    //    // 北京
-    //    public static final String LOCAL_TYPE = "local";
-    //    // 北京的Id
-    //    public static final String BEIJING_ID = "5YyX5Lqs";
-    //example：http://c.m.163.com/nc/article/headline/T1348647909107/0-20.html
     // 头条id
     public static final String HEADLINE_ID = "T1348647909107";
     // 房产id
