@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -98,11 +97,6 @@ public class NewsDetailActivity extends BaseActivity<NewsDetailPresenter, NewsDt
         return R.layout.news_detail_activity;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.d("here", "onCreate: ");
-    }
 
     @Override
     protected void initView() {
@@ -177,7 +171,7 @@ public class NewsDetailActivity extends BaseActivity<NewsDetailPresenter, NewsDt
 
         setToolBarLayout(mNewsTitle);
         //mNewsDetailTitleTv.setText(newsTitle);
-        mNewsDetailFromTv.setText("新闻来自");
+        mNewsDetailFromTv.setText(getString(R.string.news_from,newsSource,newsTime));
         setNewsDetailPhotoIv(NewsImgSrc);
         setNewsDetailBodyTv(newsDetail, newsBody);
 

@@ -15,6 +15,7 @@ import com.example.a38633.newsapp.bean.NewsChannelTable;
 import com.example.a38633.newsapp.mvp.contract.NewsMainContract;
 import com.example.a38633.newsapp.mvp.model.NewsMainModel;
 import com.example.a38633.newsapp.mvp.presenter.NewsMainPresenter;
+import com.example.a38633.newsapp.mvp.ui.activity.NewsChannelActivity;
 import com.example.a38633.newsapp.mvp.ui.adapter.BaseFragmentAdapter;
 import com.example.a38633.newsapp.utils.MyUtils;
 
@@ -42,6 +43,7 @@ public class NewsMainFragment extends BaseFragment<NewsMainPresenter,NewsMainMod
     FloatingActionButton mFab;
     @OnClick(R.id.add_channel_iv)
     public void clickAdd(){
+        NewsChannelActivity.startAction(getContext());
 
     }
     private BaseFragmentAdapter mBaseFragmentAdapter;

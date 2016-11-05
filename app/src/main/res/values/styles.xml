@@ -6,11 +6,13 @@
         <item name="colorPrimary">@color/main_blue</item>
         <item name="colorPrimaryDark">@color/main_blue</item>
         <item name="colorAccent">@color/main_blue</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
     </style>
     <style name="AppTheme.NoActionBar" parent="AppTheme">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowIsTranslucent">true</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
     </style>
     <style name="news_summary_photo_iv">
         <item name="android:layout_width">0dp</item>
@@ -29,6 +31,36 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
         <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+    <style name="action_bar">
+        <item name="android:background">@color/blue</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+    </style>
+    <style name="SwipeBackLayout">
+        <item name="edge_size">50dip</item>
+        <item name="shadow_left">@drawable/shadow_left</item>
+        <item name="shadow_right">@drawable/shadow_right</item>
+        <item name="shadow_bottom">@drawable/shadow_bottom</item>
+    </style>
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="actionMenuTextColor">@color/white</item> <!--  敲定颜色-->
+        <item name="android:textSize">18sp</item> <!--  搞掂字体大小-->
+    </style>
+    <style name="MyToolbar" parent="Base.Widget.AppCompat.Toolbar">
+        <!--Toolbar标题颜色-->
+        <item name="titleTextColor">?attr/toolbar_Text_Color</item>
+        <!--ActionBar默认按钮的颜色-->
+        <item name="colorControlNormal">?attr/toolbar_Text_Color</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+
+    </style>
+    <style name="news_channel_sort_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textColor">@color/gray_deep</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
 </resources>

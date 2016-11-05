@@ -11,12 +11,15 @@ import android.widget.LinearLayout;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.a38633.newsapp.R;
+import com.example.a38633.newsapp.bean.NewsPhotoDetail;
 import com.example.a38633.newsapp.bean.NewsSummary;
+import com.example.a38633.newsapp.mvp.ui.activity.NewsPhotoDetailActivity;
 import com.example.a38633.newsapp.utils.AppContext;
 import com.example.a38633.newsapp.utils.DisplayUtil;
 import com.zhy.adapter.recyclerview.base.ItemViewDelegate;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -40,7 +43,7 @@ public class PhotoNewsItemDelagate implements ItemViewDelegate<NewsSummary> {
     }
 
     @Override
-    public void convert(ViewHolder holder, NewsSummary newsSummary, int position) {
+    public void convert(ViewHolder holder, final NewsSummary newsSummary, int position) {
         String title = newsSummary.getTitle();
         String ptime = newsSummary.getPtime();
         holder.setText(R.id.news_summary_title_tv,title);
@@ -49,7 +52,7 @@ public class PhotoNewsItemDelagate implements ItemViewDelegate<NewsSummary> {
         holder.setOnClickListener(R.id.ll_root, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                NewsPhotoDetailActivity.startAction(mContext,getPhotoDetail(newsSummary));
             }
         });
 
@@ -74,7 +77,7 @@ public class PhotoNewsItemDelagate implements ItemViewDelegate<NewsSummary> {
                 imgScrLeft = adsBeanList.get(0).getImgsrc();
                 imgScrMiddle = adsBeanList.get(1).getImgsrc();
                 imgScrRight = adsBeanList.get(2).getImgsrc();
-                layoutParams.height = PhotoOneHeight;
+                layoutParams.height = PhotoThreeHeight;
                 holder.setText(R.id.news_summary_title_tv, AppContext.getInstance().getString(R.string.photo_collections,adsBeanList.get(0).getTitle()));
             }else if (size >= 2){
                 imgScrLeft = adsBeanList.get(0).getImgsrc();
@@ -146,5 +149,36 @@ public class PhotoNewsItemDelagate implements ItemViewDelegate<NewsSummary> {
         }else {
             holder.setVisible(R.id.news_summary_photo_iv_right,false);
         }
+    }
+    private NewsPhotoDetail getPhotoDetail(NewsSummary newsSummary) {
+        NewsPhotoDetail newsPhotoDetail = new NewsPhotoDetail();
+        newsPhotoDetail.setTitle(newsSummary.getTitle());
+        setPictures(newsSummary, newsPhotoDetail);
+        return newsPhotoDetail;
+    }
+    private void setPictures(NewsSummary newsSummary, NewsPhotoDetail newsPhotoDetail) {
+        List<NewsPhotoDetail.Picture> pictureList = new ArrayList<>();
+        if (newsSummary.getAds() != null) {
+            for (NewsSummary.AdsBean entity : newsSummary.getAds()) {
+                setValuesAndAddToList(pictureList, entity.getTitle(), entity.getImgsrc());
+            }
+        } else if (newsSummary.getImgextra() != null) {
+            for (NewsSummary.ImgextraBean entity : newsSummary.getImgextra()) {
+                setValuesAndAddToList(pictureList, null, entity.getImgsrc());
+            }
+        } else {
+            setValuesAndAddToList(pictureList, null, newsSummary.getImgsrc());
+        }
+
+        newsPhotoDetail.setPictures(pictureList);
+    }
+    private void setValuesAndAddToList(List<NewsPhotoDetail.Picture> pictureList, String title, String imgsrc) {
+        NewsPhotoDetail.Picture picture = new NewsPhotoDetail.Picture();
+        if (title != null) {
+            picture.setTitle(title);
+        }
+        picture.setImgSrc(imgsrc);
+
+        pictureList.add(picture);
     }
 }

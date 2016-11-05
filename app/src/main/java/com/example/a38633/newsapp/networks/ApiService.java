@@ -1,6 +1,7 @@
 package com.example.a38633.newsapp.networks;
 
 
+import com.example.a38633.newsapp.bean.GirlData;
 import com.example.a38633.newsapp.bean.NewsDetail;
 import com.example.a38633.newsapp.bean.NewsSummary;
 
@@ -33,6 +34,11 @@ public interface ApiService {
     Observable<ResponseBody> getNewsBodyHtmlPhoto(
             @Header("Cache-Control") String cacheControl,
             @Url String photoPath);
+    @GET("data/福利/{size}/{page}")
+    Observable<GirlData> getPhotoList(
+            @Header("Cache-Control") String cacheControl,
+            @Path("size") int size,
+            @Path("page") int page);
 
 
 }

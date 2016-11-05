@@ -7,6 +7,8 @@
         <item>财经</item>
         <item>军事</item>
         <item>体育</item>
+        <item>笑话</item>
+        <item>暴雪</item>
     </string-array>
 
     <!--新闻的可选频道-->
@@ -46,6 +48,8 @@
         <item>T1348648756099</item>
         <item>T1348648141035</item>
         <item>T1348649079062</item>
+        <item>T1348654151579</item>
+        <item>T1397016069906</item>
     </string-array>
     <string-array name="news_channel_id">
         <!--<item>5YyX5Lqs</item>-->
@@ -76,4 +80,5 @@
         <item>T1348649475931</item>
         <item>T1371543208049</item>
     </string-array>
+
 </resources>

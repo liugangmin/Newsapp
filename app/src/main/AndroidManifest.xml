@@ -7,7 +7,7 @@
     <application
         android:name=".app.App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/lauth"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
@@ -19,6 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".mvp.ui.activity.NewsDetailActivity"/>
+        <activity android:name=".mvp.ui.activity.NewsPhotoDetailActivity"/>
+        <activity android:name=".mvp.ui.activity.NewsChannelActivity"/>
     </application>
 
 </manifest>

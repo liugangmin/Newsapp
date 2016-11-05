@@ -32,7 +32,7 @@ public class NewsChannelTableMannager {
         ArrayList<NewsChannelTable> newsChannelTables = new ArrayList<>();
         for (int i = 0;i<channelName.size();i++){
             NewsChannelTable entity = new NewsChannelTable(channelName.get(i),channelId.get(i), ApiConstans.getType(channelId.get(i))
-                    ,i <=5,i,false);
+                    ,i <=7,i,false);
             newsChannelTables.add(entity);
         }
         return newsChannelTables;

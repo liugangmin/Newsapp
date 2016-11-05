@@ -34,4 +34,5 @@ public class NewsListAdapter extends MultiItemTypeAdapter<NewsSummary> {
             return 0;
         }
     }
+
 }

@@ -30,7 +30,6 @@ public class NewsItemDelagate implements ItemViewDelegate<NewsSummary> {
     public boolean isForViewType(NewsSummary item, int position) {
         return  !TextUtils.isEmpty(item.getDigest());
     }
-
     @Override
     public void convert(final ViewHolder holder, final NewsSummary newsSummary, int position) {
         String title = newsSummary.getTitle();
@@ -58,4 +57,5 @@ public class NewsItemDelagate implements ItemViewDelegate<NewsSummary> {
             }
         });
     }
+
 }

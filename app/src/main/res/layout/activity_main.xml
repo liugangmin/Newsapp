@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.a38633.newsapp.mvp.ui.activity.MainActivity">
+                xmlns:tools="http://schemas.android.com/tools"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tl="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/activity_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.example.a38633.newsapp.mvp.ui.activity.MainActivity"
+                >
     <FrameLayout
         android:id="@+id/fl_body"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+        <com.flyco.tablayout.CommonTabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            tl:tl_indicator_height="0dp"
+            tl:tl_iconHeight="20dp"
+            tl:tl_iconWidth="20dp"
+            tl:tl_indicator_color="@color/gray"
+            tl:tl_textSelectColor="@color/blue"
+            tl:tl_textUnselectColor="@color/light_gray"
+            tl:tl_textsize="11sp"
+            tl:tl_underline_height="0dp"/>
 
 
 

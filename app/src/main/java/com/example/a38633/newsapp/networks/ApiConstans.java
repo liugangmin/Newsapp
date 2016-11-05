@@ -81,6 +81,27 @@ public class ApiConstans {
     // 军事
     public static final String MILITARY_ID = "T1348648141035";
 
+
+
+
+    /**
+     * 新浪图片新闻
+     * http://gank.io/api/data/福利/{size}/{page}
+     */
+    public static final String SINA_PHOTO_HOST = "http://gank.io/api/";
+
+    // 精选列表
+    public static final String SINA_PHOTO_CHOICE_ID = "hdpic_toutiao";
+    // 趣图列表
+    public static final String SINA_PHOTO_FUN_ID = "hdpic_funny";
+    // 美图列表
+    public static final String SINA_PHOTO_PRETTY_ID = "hdpic_pretty";
+    // 故事列表
+    public static final String SINA_PHOTO_STORY_ID = "hdpic_story";
+
+    // 图片详情
+    public static final String SINA_PHOTO_DETAIL_ID = "hdpic_hdpic_toutiao_4";
+
     /**
      * 视频 http://c.3g.163.com/nc/video/list/V9LG4CHOR/n/10-10.html
      */
@@ -131,6 +152,12 @@ public class ApiConstans {
         switch (hostType) {
             case HostType.NETEASE_NEWS_VIDEO:
                 host = NETEAST_HOST;
+                break;
+            case HostType.GANK_GIRL_PHOTO:
+                host = SINA_PHOTO_HOST;
+                break;
+            case HostType.NEWS_DETAIL_HTML_PHOTO:
+                host = "http://kaku.com/";
                 break;
             default:
                 host = "";
