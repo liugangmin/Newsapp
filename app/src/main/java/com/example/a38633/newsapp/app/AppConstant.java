@@ -27,6 +27,8 @@ public class AppConstant {
     public static String NEWS_POST_ID = "NEWS_POST_ID";//新闻详情id
     public static String NEWS_LINK = "NEWS_LINK";
     public static String NEWS_TITLE = "NEWS_TITLE";
+    public static String GAME_DETAIL = "GAME_DETAIL";
+    public static String GAME_TITLE = "GAME_TITLE";
 
     public static final String PHOTO_DETAIL_IMGSRC = "photo_detail_imgsrc";
     public static final String PHOTO_DETAIL = "photo_detail";

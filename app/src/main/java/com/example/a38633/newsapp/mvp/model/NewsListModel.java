@@ -23,7 +23,8 @@ import rx.schedulers.Schedulers;
 public class NewsListModel implements NewsListContract.Model {
     @Override
     public Observable<List<NewsSummary>> getNewsListData(String type, final String id, final int startPage) {
-        return RetrofitManager.getDelfult(HostType.NETEASE_NEWS_VIDEO).getNewsList(RetrofitManager.getCacheControl(),type,id,startPage)
+        return RetrofitManager.getDelfult(HostType.NETEASE_NEWS_VIDEO)
+                .getNewsList(RetrofitManager.getCacheControl(),type,id,startPage)
                 .flatMap(new Func1<Map<String, List<NewsSummary>>, Observable<NewsSummary>>() {
                     @Override
                     public Observable<NewsSummary> call(Map<String, List<NewsSummary>> map) {

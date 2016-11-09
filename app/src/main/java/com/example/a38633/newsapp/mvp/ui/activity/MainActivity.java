@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Bind(R.id.tab_layout)
     CommonTabLayout mTabLayout;
-    private String[] mTitle = {"新闻","妹子","开发中","开发中"};
+    private String[] mTitle = {"新闻","妹子","西华就业","游戏资讯"};
     private int[] mIconUnselectIds = {
             R.mipmap.ic_home_normal,R.mipmap.ic_girl_normal,R.mipmap.ic_video_normal,R.mipmap.ic_care_normal};
     private int[] mIconSelectIds = {

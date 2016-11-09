@@ -15,7 +15,6 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -76,31 +75,25 @@ public class NewsDetailActivity extends BaseActivity<NewsDetailPresenter, NewsDt
         Intent intent = new Intent(mcontext,NewsDetailActivity.class);
         intent.putExtra(AppConstant.NEWS_POST_ID,postId);
         intent.putExtra(AppConstant.NEWS_IMG_RES,imgUrl);
-        Log.d("here", "startAction: 1");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
             ActivityOptions options = ActivityOptions
                     .makeSceneTransitionAnimation((Activity) mcontext,view,AppConstant.TRANSITION_ANIMATION_NEWS_PHOTOS);
-            Log.d("here", "startAction: 2");
-            //mcontext.startActivity(intent,options.toBundle());
             mcontext.startActivity(intent);
         }else {
             ActivityOptionsCompat options = ActivityOptionsCompat
                     .makeScaleUpAnimation(view,view.getWidth()/2,view.getHeight()/2,0,0);
-            Log.d("here", "startAction: 3");
             ActivityCompat.startActivity((Activity) mcontext,intent,options.toBundle());
         }
     }
 
     @Override
     protected int getLayoutId() {
-        Log.d("here", "getLayoutId: ");
         return R.layout.news_detail_activity;
     }
 
 
     @Override
     protected void initView() {
-        Log.d("here", "initView: ");
         postId = getIntent().getStringExtra(AppConstant.NEWS_POST_ID);
         mPresenter.getOneNewsDataRequest(postId);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {

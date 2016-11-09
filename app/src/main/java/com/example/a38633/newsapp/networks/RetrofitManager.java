@@ -108,7 +108,7 @@ public class RetrofitManager {
 
     /**
      *
-     * @param
+     * @param根据hosttype获取相应service
      * @return
      */
     public static ApiService getDelfult(int hostType){

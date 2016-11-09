@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginTop="8dp">
+    <RelativeLayout
+        android:id="@+id/game_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/games_iv"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="8dp"
+            android:scaleType="centerCrop"
+            tools:src="@mipmap/ic_launcher"
+            tools:targetApi="lollipop"/>
+        <TextView
+            android:id="@+id/games_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/games_iv"
+            android:layout_toRightOf="@id/games_iv"
+            android:lines="2"
+            android:textSize="20dp"
+            android:text="dsfdfdsfdsfsdfsdfsfsfdsfdsdf"
+            android:layout_marginRight="8dp"
+            tools:targetApi="LOLLIPOP"/>
+        <TextView
+            android:id="@+id/game_times"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/games_tv"
+            android:layout_marginTop="10dp"
+            tools:text="05-28 20:09"/>
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

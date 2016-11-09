@@ -1,6 +1,8 @@
 package com.example.a38633.newsapp.networks;
 
 
+import com.example.a38633.newsapp.bean.GameApi;
+import com.example.a38633.newsapp.bean.GameData;
 import com.example.a38633.newsapp.bean.GirlData;
 import com.example.a38633.newsapp.bean.NewsDetail;
 import com.example.a38633.newsapp.bean.NewsSummary;
@@ -40,6 +42,15 @@ public interface ApiService {
             @Path("size") int size,
             @Path("page") int page);
 
-
+    @GET("toutiao/get_list")
+    Observable<Map<String,List<GameData>>> getGameList(
+                    @Header("Cache_Control") String cacheControl);
+    @GET("toutiao/get_list")
+    Observable<GameApi> getGame(
+            @Header("Cache_Control") String cacheControl);
 }
+
+
+
+
 

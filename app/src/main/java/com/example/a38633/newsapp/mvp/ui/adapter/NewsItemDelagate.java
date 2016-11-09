@@ -41,7 +41,7 @@ public class NewsItemDelagate implements ItemViewDelegate<NewsSummary> {
 
         holder.setText(R.id.news_summary_title_tv,title);
         holder.setText(R.id.news_summary_ptime_tv,ptime);
-        holder.setText(R.id.news_summary_digest_tv,ptime);
+        holder.setText(R.id.news_summary_digest_tv,digest);
         ImageView view = holder.getView(R.id.news_summary_photo_iv);
         Glide.with(mContext).load(newsSummary.getImgsrc())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)

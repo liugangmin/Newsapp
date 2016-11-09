@@ -1,5 +1,7 @@
 package com.example.a38633.newsapp.networks;
 
+import static com.example.a38633.newsapp.networks.HostType.GAMEEE_NEWS_MY;
+
 /**
  * Created by 38633 on 2016/10/23.
  */
@@ -8,6 +10,7 @@ public class ApiConstans {
     public static final String NETEAST_HOST = "http://c.m.163.com/";
     public static final String END_URL = "-20.html";
     public static final String ENDDETAIL_URL = "/full.html";
+    public static final String GAME_NEWS = "http://shouyoutoutiao.app.17wanba.com/";//游戏新闻来源
 
     // 新闻详情
     public static final String NEWS_DETAIL = NETEAST_HOST + "nc/article/";
@@ -158,6 +161,9 @@ public class ApiConstans {
                 break;
             case HostType.NEWS_DETAIL_HTML_PHOTO:
                 host = "http://kaku.com/";
+                break;
+            case GAMEEE_NEWS_MY:
+                host = GAME_NEWS;
                 break;
             default:
                 host = "";
