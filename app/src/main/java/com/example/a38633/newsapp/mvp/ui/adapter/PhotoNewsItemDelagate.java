@@ -14,7 +14,7 @@ import com.example.a38633.newsapp.R;
 import com.example.a38633.newsapp.bean.NewsPhotoDetail;
 import com.example.a38633.newsapp.bean.NewsSummary;
 import com.example.a38633.newsapp.mvp.ui.activity.NewsPhotoDetailActivity;
-import com.example.a38633.newsapp.utils.AppContext;
+import com.example.a38633.newsapp.app.AppContext;
 import com.example.a38633.newsapp.utils.DisplayUtil;
 import com.zhy.adapter.recyclerview.base.ItemViewDelegate;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
@@ -59,9 +59,9 @@ public class PhotoNewsItemDelagate implements ItemViewDelegate<NewsSummary> {
     }
     @SuppressLint("StringFormatInvalid")
     private void setImageView(ViewHolder holder,NewsSummary newsSummary){
-        int PhotoThreeHeight = (int) DisplayUtil.dip2px(90);
-        int PhotoTwoHeight = (int) DisplayUtil.dip2px(120);
-        int PhotoOneHeight = (int) DisplayUtil.dip2px(150);
+        int PhotoThreeHeight =  DisplayUtil.dip2px(90);
+        int PhotoTwoHeight =  DisplayUtil.dip2px(120);
+        int PhotoOneHeight =  DisplayUtil.dip2px(150);
 
         String imgScrLeft = null;
         String imgScrMiddle = null;
@@ -86,11 +86,12 @@ public class PhotoNewsItemDelagate implements ItemViewDelegate<NewsSummary> {
                 layoutParams.height = PhotoTwoHeight;
             }else if (size >= 1){
                 imgScrLeft = adsBeanList.get(0).getImgsrc();
-                layoutParams.height = PhotoThreeHeight;
+                layoutParams.height = PhotoOneHeight;
             }
 
         }else if (newsSummary.getImgextra() != null){
             int size = newsSummary.getImgextra().size();
+
             if (size>=3){
                 imgScrLeft = newsSummary.getImgextra().get(0).getImgsrc();
                 imgScrMiddle = newsSummary.getImgextra().get(1).getImgsrc();
@@ -105,13 +106,14 @@ public class PhotoNewsItemDelagate implements ItemViewDelegate<NewsSummary> {
                 imgScrLeft = newsSummary.getImgextra().get(0).getImgsrc();
                 layoutParams.height = PhotoThreeHeight;
             }
+
         }else {
             imgScrLeft = newsSummary.getImgsrc();
             layoutParams.height = PhotoOneHeight;
         }
         setPhotoImageView(holder,imgScrLeft,imgScrMiddle,imgScrRight);
         news_summary_photo_tv_group.setLayoutParams(layoutParams);
-    }
+}
     private void setPhotoImageView(ViewHolder holder,String imgScrLeft,String imgScrMiddle,String imgScrRight){
         if (imgScrLeft != null){
             holder.setVisible(R.id.news_summary_photo_iv_left,true);

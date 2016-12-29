@@ -25,7 +25,7 @@ public class NewsListAdapter extends MultiItemTypeAdapter<NewsSummary> {
             notifyDataSetChanged();
         }else {
             changeData(newsSummaries);
-        }
+    }
     }
     public int getSize(){
         if (mDatas != null){

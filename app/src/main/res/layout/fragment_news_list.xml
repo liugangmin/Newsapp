@@ -10,6 +10,8 @@
             andriod:id="@+id/rc"
             andriod:layout_width="match_parent"
             andriod:layout_height="match_parent"
+            andriod:animationCache="true"
+            andriod:layoutAnimation="@anim/rec_donghua"
             />
     </android.support.v4.widget.SwipeRefreshLayout>
 

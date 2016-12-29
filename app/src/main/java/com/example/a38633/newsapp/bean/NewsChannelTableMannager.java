@@ -2,7 +2,7 @@ package com.example.a38633.newsapp.bean;
 
 import com.example.a38633.newsapp.R;
 import com.example.a38633.newsapp.networks.ApiConstans;
-import com.example.a38633.newsapp.utils.AppContext;
+import com.example.a38633.newsapp.app.AppContext;
 
 import java.util.ArrayList;
 import java.util.Arrays;

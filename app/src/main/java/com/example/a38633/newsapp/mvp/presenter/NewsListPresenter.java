@@ -40,6 +40,33 @@ public class NewsListPresenter extends NewsListContract.Presenter {
             }
         }));
     }
+    @Override
+    public void getNewsListDataRequest11(String type, String id, int starPage) {
+        mRxMannager.add(mModel.getNewsListData(type,id,starPage).subscribe(new Subscriber<List<NewsSummary>>() {
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onStart() {
+                super.onStart();
+                mView.showLoading("加载中");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onNext(List<NewsSummary> newsSummaries) {
+                mView.returnNewsListDataall(newsSummaries);
+                mView.stopLoading();
+            }
+        }));
+    }
+
 
     @Override
     protected void onStart() {

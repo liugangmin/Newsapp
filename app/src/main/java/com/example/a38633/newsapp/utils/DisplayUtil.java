@@ -15,6 +15,7 @@ import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 
+import com.example.a38633.newsapp.app.AppContext;
 
 
 /**

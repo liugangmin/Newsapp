@@ -5,6 +5,8 @@ import android.support.design.widget.TabLayout;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.a38633.newsapp.app.AppContext;
+
 /**
  * Created by 38633 on 2016/10/28.
  */

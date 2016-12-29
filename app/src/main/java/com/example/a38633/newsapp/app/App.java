@@ -3,8 +3,6 @@ package com.example.a38633.newsapp.app;
 import android.app.Application;
 import android.content.Context;
 
-import com.example.a38633.newsapp.utils.AppContext;
-
 /**
  * Created by 38633 on 2016/10/22.
  */

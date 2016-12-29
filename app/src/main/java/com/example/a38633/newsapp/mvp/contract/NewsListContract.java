@@ -19,9 +19,11 @@ public interface NewsListContract {
     }
     interface View extends BaseView{
         void returnNewsListData(List<NewsSummary> newsSummaries);
+        void returnNewsListDataall(List<NewsSummary> newsSummaries);
         void scrolltoTop();
     }
     abstract class Presenter extends BasePresenter<View,Model>{
         public abstract void getNewsListDataRequest(String type,final String id,int starPage);
+        public abstract void getNewsListDataRequest11(String type,final String id,int starPage);
     }
 }

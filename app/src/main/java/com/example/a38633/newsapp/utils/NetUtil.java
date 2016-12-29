@@ -4,6 +4,8 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import com.example.a38633.newsapp.app.AppContext;
+
 /**
  * Created by 38633 on 2016/10/23.
  */

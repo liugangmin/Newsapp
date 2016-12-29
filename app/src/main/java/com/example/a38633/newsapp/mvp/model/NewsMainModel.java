@@ -5,7 +5,7 @@ import com.example.a38633.newsapp.bean.NewsChannelTable;
 import com.example.a38633.newsapp.bean.NewsChannelTableMannager;
 import com.example.a38633.newsapp.mvp.contract.NewsMainContract;
 import com.example.a38633.newsapp.utils.ACache;
-import com.example.a38633.newsapp.utils.AppContext;
+import com.example.a38633.newsapp.app.AppContext;
 
 import java.util.ArrayList;
 import java.util.List;

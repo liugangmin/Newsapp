@@ -39,7 +39,7 @@ public class PhotosMainFragment extends BaseFragment<PhotoListPresenter, PhotoLi
     private LoadOnSxollListener mLoadOnSxollListener;
     private static int SIZE = 20;
     private int mStartPage = 1;
-    public int size = 20;
+    public int size = 40;
 
 
     @Override

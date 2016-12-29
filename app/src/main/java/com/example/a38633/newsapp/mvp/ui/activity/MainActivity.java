@@ -35,13 +35,10 @@ public class MainActivity extends AppCompatActivity {
     private PhotosMainFragment photosMainFragment;
     private VideoMainFragment videoMainFragment;
     private CareMainFragment careMainFragment;
-    private static int tabLayoutHeight;
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
     public static void startAction(Activity activity){
         Intent intent = new Intent(activity, MainActivity.class);
         activity.startActivity(intent);
-//        activity.overridePendingTransition(R.anim.fade_in,
-//                com.jaydenxiao.common.R.anim.fade_out);
     }
     public int getLayoutId(){
         return R.layout.activity_main;
@@ -55,6 +52,11 @@ public class MainActivity extends AppCompatActivity {
         initView();
         initTab();
         initFragment(savedInstanceState);
+
+    }
+    public void starAction(Activity activity){
+        Intent intent = new Intent(activity,MainActivity.class);
+        startActivity(intent);
     }
     private void initFragment(Bundle savedInstanceState) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

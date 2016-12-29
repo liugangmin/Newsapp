@@ -47,4 +47,6 @@ public abstract class BaseActivity<T extends BasePresenter,E extends BaseModel> 
             mPresenter.onDestory();
         mRxMannager.clear();
     }
+
 }
+

@@ -1,6 +1,7 @@
 package com.example.a38633.newsapp.mvp.ui.fragment;
 
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -43,7 +44,6 @@ public class NewsListFragment extends BaseFragment<NewsListPresenter,NewsListMod
     @Override
     protected int getLayoutResource() {
     return R.layout.fragment_news_list;
-
     }
 
     @Override
@@ -57,16 +57,20 @@ public class NewsListFragment extends BaseFragment<NewsListPresenter,NewsListMod
             mNewsId = getArguments().getString(AppConstant.NEWS_ID);
             mNewsType = getArguments().getString(AppConstant.NEWS_TYPE);
         }
+
         mSrl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener(){
+
 
             @Override
             public void onRefresh() {
                 mStartPage = 0;
-                mPresenter.getNewsListDataRequest(mNewsType,mNewsId,mStartPage);
+                mPresenter.getNewsListDataRequest11(mNewsType,mNewsId,mStartPage);
+
             }
         });
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         mRc.setLayoutManager(layoutManager);
+        mRc.setItemAnimator(new DefaultItemAnimator());
         mNewsListAdapter = new NewsListAdapter(getActivity(),datas);
         mNewsListAdapter.addItemViewDelegate(new NewsItemDelagate(getContext()));
         mNewsListAdapter.addItemViewDelegate(new PhotoNewsItemDelagate(getContext()));
@@ -103,6 +107,21 @@ public class NewsListFragment extends BaseFragment<NewsListPresenter,NewsListMod
         mLoadOnSxollListener.setLoading(false);
         mSrl.setRefreshing(false);
     }
+
+    @Override
+    public void returnNewsListDataall(List<NewsSummary> newsSummaries) {
+
+            if (newsSummaries != null){
+                mStartPage += 20;
+                if (newsSummaries.size() > 0){
+                    mNewsListAdapter.changeData(newsSummaries);
+                }
+            }
+            mLoadOnSxollListener.setLoading(false);
+            mSrl.setRefreshing(false);
+
+    }
+
 
     @Override
     public void scrolltoTop() {
